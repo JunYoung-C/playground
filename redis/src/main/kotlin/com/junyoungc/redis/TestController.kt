@@ -38,4 +38,17 @@ class TestController(
         return ResponseEntity.ok(value)
     }
 
+    @PostMapping("/login")
+    fun login(session: HttpSession, @RequestParam name: String): ResponseEntity<Unit> {
+        session.setAttribute("name", name)
+
+        return ResponseEntity.ok().build()
+    }
+
+    @GetMapping("/login")
+    fun getMyName(session: HttpSession): ResponseEntity<String> {
+        val value = session.getAttribute("name") as String
+
+        return ResponseEntity.ok(value)
+    }
 }

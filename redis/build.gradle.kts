@@ -46,7 +46,7 @@ dependencies {
 
     // redis
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
-    implementation("org.springframework.session:spring-session-data-redis")
+//    implementation("org.springframework.session:spring-session-data-redis")
 
     // h2
     runtimeOnly("com.h2database:h2:2.1.210")

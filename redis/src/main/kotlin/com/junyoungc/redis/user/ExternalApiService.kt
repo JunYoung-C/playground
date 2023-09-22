@@ -1,5 +1,6 @@
 package com.junyoungc.redis.user
 
+import org.springframework.cache.annotation.Cacheable
 import org.springframework.stereotype.Service
 
 @Service
@@ -25,6 +26,7 @@ class ExternalApiService {
         return ""
     }
 
+    @Cacheable(cacheNames = ["userAgeCache"], key = "#userId")
     fun getUserAge(userId: String): Int {
         // 외부 서비스나 db 호출
         try {

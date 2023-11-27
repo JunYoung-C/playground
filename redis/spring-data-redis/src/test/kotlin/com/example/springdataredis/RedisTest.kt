@@ -11,18 +11,19 @@ class RedisTest {
 
     @Test
     fun basicTest() {
-        val rand = Person("rand", "al'thor").apply {
-            address = Address("emond's field", "andor")
+        val rand = Person("Junyoung", "Choi").apply {
+            address = Address("sillim", "korea")
         }
 
-        println(personRepository.save(rand))
+        val saveRand = personRepository.save(rand)
+        println(saveRand)
 
-        val findRand = personRepository.findById(rand.id).get()
+        val findRand = personRepository.findById(saveRand.id!!).get()
 
         println(findRand)
 
         println(personRepository.count())
 
-        println(personRepository.delete(rand))
+//        println(personRepository.delete(rand))
     }
 }

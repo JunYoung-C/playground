@@ -29,18 +29,18 @@ class RedisConfig {
         }
     }
 
-    @Bean
-    fun keyValueMappingContext(): RedisMappingContext {
-        return RedisMappingContext(
-            MappingConfiguration(MyIndexConfiguration(), KeyspaceConfiguration())
-        )
-    }
-
-    class MyIndexConfiguration : IndexConfiguration() {
-        override fun initialConfiguration(): Iterable<IndexDefinition> {
-            return setOf<IndexDefinition>(SimpleIndexDefinition("people", "firstname"))
-        }
-    }
+//    @Bean
+//    fun keyValueMappingContext(): RedisMappingContext {
+//        return RedisMappingContext(
+//            MappingConfiguration(MyIndexConfiguration(), KeyspaceConfiguration())
+//        )
+//    }
+//
+//    class MyIndexConfiguration : IndexConfiguration() {
+//        override fun initialConfiguration(): Iterable<IndexDefinition> {
+//            return setOf<IndexDefinition>(SimpleIndexDefinition("people", "firstname"))
+//        }
+//    }
 }
 
 

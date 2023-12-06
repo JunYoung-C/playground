@@ -1,9 +1,9 @@
 package com.example.springdataredis
 
 import org.springframework.data.annotation.Id
-
+import org.springframework.data.geo.Point
 import org.springframework.data.redis.core.RedisHash
-import org.springframework.data.redis.core.index.Indexed
+import org.springframework.data.redis.core.index.GeoIndexed
 
 @RedisHash("people")
 data class Person(
@@ -15,6 +15,7 @@ data class Person(
 )
 
 data class Address(
-    @Indexed val city: String? = null,
+    val city: String? = null,
+    @GeoIndexed val location: Point? = null,
     val country: String? = null
 )
